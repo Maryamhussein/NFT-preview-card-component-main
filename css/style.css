@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    
+    --Very-dark-blue-bg:hsl(217, 54%, 11%);
+    --Very-dark-blue-card: #14253d;
+    --Very-dark-blue-line: #2f415b;
+    --White: hsl(0, 0%, 100%);
+}
+body,html{
+    height: calc(100% -2px);
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Very-dark-blue-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+main{
+    background-color: var(--Very-dark-blue-card);
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+main .image {
+    position: relative;
+}
+main .image::before{
+    content: '';
+    background-color: var(--Cyan);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    opacity: .5;
+    border-radius:20px ;
+}
+main .image:hover::before{
+    width: 100%;
+    height: 100%;
+}
+main .image img{
+    max-width: 100%;
+    border-radius: 20px;
+    margin: auto;
+    display: block;
+}
+.info{
+    padding: 20px;
+}
+main h3{
+    color: var(--White);
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+main h3:hover{
+    color: var(--Cyan);
+}
+main p{
+    color: var(--Soft-blue);
+    margin-top: 15px;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-size: 16px;
+}
+.text-left ,.text-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text img{
+    margin-right: 5px;
+}
+.text  .text-left span{
+    color: var(--Cyan);
+    font-weight: bold;
+}
+.text .text-right span{
+    color:var(--Soft-blue);
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.creation{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.creation img{
+    width: 40px;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+}
+.creation p{
+    margin-top: -8px;
+    color: var(--White);
+    cursor: pointer;
+}
+.creation p:hover{
+    color: var(--Cyan);
+}
+.creation span{
+    color: var(--Soft-blue);
+}
+@media (max-width:375px){
+    main{
+        width: 350px;
+    }
+}
